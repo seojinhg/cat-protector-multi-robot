@@ -1,0 +1,11 @@
+*.zip
+*.pt
+*.bag
+build/
+install/
+log/
+.ros/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
