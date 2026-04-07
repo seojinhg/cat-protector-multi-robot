@@ -77,7 +77,7 @@ To minimize the domain gap between training data and real deployment, photos wer
 
 | Dataset | Accuracy | Issue |
 |---------|----------|-------|
-| Roboflow public dataset | - | People in background detected as cats |
+| Roboflow public dataset | 67% | People in background detected as cats |
 | **Custom dataset (TurtleBot4 camera, self-collected)** | **97%** | ✅ Resolved |
 
 ---
