@@ -80,6 +80,11 @@ To minimize the domain gap between training data and real deployment, photos wer
 | Roboflow public dataset | 67% | People in background detected as cats |
 | **Custom dataset (TurtleBot4 camera, self-collected)** | **97%** | ✅ Resolved |
 
+<p align="center">
+  <img src="demo_gifs/yolo_injured_cat_detection.gif" width="515" alt="YOLOv11 detecting injured_cat, food_bowl and empty_food_bowl with track IDs"><br>
+  <em>YOLOv11 detection with Track IDs — injured_cat, food_bowl, empty_food_bowl (2x speed)</em>
+</p>
+
 ---
 
 ### 2. Object Tracking — Real-time Cat Following ⭐
@@ -93,6 +98,11 @@ Receiving camera frames caused timing delays between detection and robot respons
 - Tuned FPS settings to balance frame rate and processing time
 - Used **YOLO Track ID** (`persist=True`) to maintain consistent object identity across frames — without Track ID, the same cat could be assigned a new ID each frame, causing erratic robot behavior
 - Addressed QoS settings, camera FPS, callback processing time, and synchronization timing
+
+<p align="center">
+  <img src="demo_gifs/cat_tracking_topview.gif" width="480" alt="Tracking robot following a cat"><br>
+  <em>Tracking robot following the cat in real time (2x speed)</em>
+</p>
 
 **Sensor Synchronization**
 
@@ -120,6 +130,13 @@ Synchronization timing was one of the most challenging aspects — ROS2 network 
 - Calls `goToPose(goal_pose)` via `TurtleBot4Navigator`
 - `goal_interval = 0.3s` and `min_goal_distance = 0.3m` thresholds prevent duplicate/excessive movement commands (see Troubleshooting)
 - RViz Marker (red sphere) visualizes the target position
+
+<p align="center">
+  <img src="images/nav2_costmap_1.jpg" width="32%" alt="Nav2 costmap on SLAM map 1">
+  <img src="images/nav2_costmap_2.jpg" width="32%" alt="Nav2 costmap on SLAM map 2">
+  <img src="images/nav2_costmap_3.jpg" width="32%" alt="Nav2 costmap on SLAM map 3"><br>
+  <em>Custom SLAM map with Nav2 costmap in RViz</em>
+</p>
 
 ---
 
@@ -234,7 +251,10 @@ pip install ultralytics opencv-python numpy
 
 ## 🎬 Demo
 
-> 📹 Demo video coming soon
+<p align="center">
+  <img src="demo_gifs/multi_robot_patrol.gif" width="640" alt="Two TurtleBot4s patrolling and responding in the test arena"><br>
+  <em>Two TurtleBot4s in the test arena — patrol robot and tracking robot operating together (6x speed)</em>
+</p>
 
 ---
 
